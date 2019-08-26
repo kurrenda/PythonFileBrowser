@@ -2,7 +2,7 @@ from tkinter import *
 
 class Gui():
 
-    def __init__(self, window, default_path, func):
+    def __init__(self, window, func):
 
         self.func = func
 
@@ -10,7 +10,7 @@ class Gui():
         self.window.title("PythonFileBrowser")
         self.window.geometry('950x500')
 
-        self.default_path = default_path
+        self.default_path = self.func.current_path
 
         self.menu = Menu(self.window)
         self.window.config(menu=self.menu)
@@ -27,11 +27,17 @@ class Gui():
 
         self.entry = Entry(self.path_frame, text="", width=130)
         self.entry.grid(row=0, column= 1, padx=(10), pady =(10))
-        self.entry.insert(0,default_path)
+        self.entry.insert(0,self.default_path)
 
         self.button = Button(self.path_frame, text="Wyszukaj")
         self.button.grid(row=0, column= 3, padx=(10), pady =(10))
 
         self.listbox = Listbox(self.window, width = 154, height = 27)
         self.listbox.grid(row=1, column=0,  padx=10, pady=10)
+        self.listbox.bind('<Double-Button-1>', lambda _: self.func.double_click(self.listbox, self.entry))
 
+
+    def cursorSelection(self):
+
+        self.clicked = self.listbox.curselection()
+        print(self.clicked)
