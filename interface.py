@@ -37,7 +37,3 @@ class Gui():
         self.listbox.bind('<Double-Button-1>', lambda _: self.func.double_click(self.listbox, self.entry))
 
 
-    def cursorSelection(self):
-
-        self.clicked = self.listbox.curselection()
-        print(self.clicked)
