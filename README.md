@@ -1,6 +1,6 @@
 ## PythonFilerBrowser (in progress)
 
-#Simple file manager,
+# Simple file manager,
 current functionalities:
 
 
