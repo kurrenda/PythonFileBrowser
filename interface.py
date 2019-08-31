@@ -9,6 +9,7 @@ class Gui():
         self.window = window
         self.window.title("PythonFileBrowser")
         self.window.geometry('950x500')
+        self.window.resizable(width=False, height=False)
 
         self.default_path = self.func.current_path
 
@@ -29,7 +30,7 @@ class Gui():
         self.entry.grid(row=0, column= 1, padx=(10), pady =(10))
         self.entry.insert(0,self.default_path)
 
-        self.button = Button(self.path_frame, text="Wyszukaj")
+        self.button = Button(self.path_frame, text="Search", command= lambda: self.func.entry_read_search(self.listbox, self.entry))
         self.button.grid(row=0, column= 3, padx=(10), pady =(10))
 
         self.listbox = Listbox(self.window, width = 154, height = 27)

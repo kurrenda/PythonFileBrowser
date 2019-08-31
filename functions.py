@@ -63,3 +63,10 @@ class Functions():
         self.listbox = listbox
         self.listbox.delete(0, END)
         self.get_path(listbox)
+
+
+    def entry_read_search(self,listbox, entry):
+        self.entry = entry
+        self.entryString = self.entry.get()
+        self.current_path = self.entryString
+        self.refresh_listbox(listbox)
