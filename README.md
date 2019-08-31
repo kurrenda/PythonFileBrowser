@@ -1,5 +1,11 @@
 ## PythonFilerBrowser (in progress)
 
+Running the program:
+
+```
+python main.py
+```
+
 current functionalities:
 
 - browse catalogs
