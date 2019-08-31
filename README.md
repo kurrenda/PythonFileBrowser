@@ -1,4 +1,4 @@
-## In progress
+## PythonFilerBrowser (in progress)
 
 Simple file manager - current functionalities:
 -browse catalogs 
